@@ -4,7 +4,7 @@ import { tickCounter } from './lib/tickCounter.js';
 import { global } from './lib/global.js';
 import Character from './Character.js';
 import Platform from './Platform.js';
-
+import Gizmo from './Gizmo.js';
 function main() {
 
     const { Engine, Render, Runner, Composite, World } = Matter;
@@ -54,10 +54,12 @@ function main() {
 
     // Add entities here
     const player = new Character(50, 50, 50, 50);
-    player.add();
-
+   
     const ground = new Platform(100, 600, 400, 30);
     ground.add();
+
+    const myplayer = new Gizmo()
+    myplayer.add();
 
 }
 window.onload = main;
