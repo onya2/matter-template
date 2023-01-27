@@ -23,7 +23,7 @@ function main() {
         engine: engine,
         options: {
             width: 800,
-            height: 640,
+            height: 500,
             wireframes: false
         }
     });
@@ -55,8 +55,35 @@ function main() {
     // Add entities here
     const player = new Character(50, 50, 50, 50);
    
-    const ground = new Platform(100, 600, 400, 30);
+    const ground = new Platform(50, 300, 200, 15);
     ground.add();
+
+    const Platform1 = new Platform(250, 250, 150, 15);
+    Platform1.add();
+
+    const Platform2 = new Platform(600, 300, 200, 20);
+    Platform2.body.render.fillStyle = '#8E44AD';
+    Platform2.add();
+
+    const Platform3 = new Platform(100, 900, 4000, 50);
+    Platform3.add();
+
+    const Platform4 = new Platform(300, 450, 5000, 50);
+    Platform4.body.render.fillStyle = '#E712F3';
+    Platform4.add();
+
+
+
+
+
+
+    
+
+
+
+
+
+
 
     const myplayer = new Gizmo()
     myplayer.add();

@@ -18,6 +18,9 @@ class Platform extends Entity {
         });
 
         this.static = true;
+
+        this.group = 'platform'
+
     }
 }
 
