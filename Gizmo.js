@@ -14,7 +14,11 @@ class Gizmo extends Entity {
                     mask: collisions.ground // The collision categories this entity collides with
                 },
                 render: {
-                    fillStyle: '#1239F3',
+                    sprite: {
+                        texture: 'giz.png' ,
+                        xScale: 4,
+                        yScale: 4
+                    }
                 },
                 label: this.key
 

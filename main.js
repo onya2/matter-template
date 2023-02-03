@@ -44,6 +44,10 @@ function main() {
     global.bodies = []; // List of physics 'bodies' in the world
     global.entities = []; // List of entities in the world
     global.world = engine.world;
+    global.engine = engine;
+    global.render = render;
+    global.runner = runner;
+
 
     // Set function to run every game tick
     Matter.Events.on(runner, 'tick', tickCounter);
@@ -59,6 +63,7 @@ function main() {
     ground.add();
 
     const Platform1 = new Platform(250, 250, 150, 15);
+    Platform1.body.render.fillStyle = '#0EF906'
     Platform1.add();
 
     const Platform2 = new Platform(600, 300, 200, 20);
@@ -67,6 +72,10 @@ function main() {
 
     const Platform3 = new Platform(100, 900, 4000, 50);
     Platform3.add();
+
+    const Platform5 = new Platform(400, 175, 150, 16);
+    Platform5.body.render.fillStyle = '#FFFF04';
+    Platform5.add();
 
     const Platform4 = new Platform(300, 450, 5000, 50);
     Platform4.body.render.fillStyle = '#E712F3';
@@ -90,3 +99,21 @@ function main() {
 
 }
 window.onload = main;
+
+
+function stop() {
+
+    const { Engine, Render, Runner, Composite, World } = Matter;
+
+    World.clear(global.world);
+    Engine.clear(global.engine);
+    Render.stop(global.render);
+    Runner.stop(global.runner);
+    global.render.canvas.remove();
+    global.render.canvas = null;
+    global.render.context = null;
+    global.render.textures = {};
+
+}
+
+export { stop, main };
